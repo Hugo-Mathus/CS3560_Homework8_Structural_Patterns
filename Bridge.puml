@@ -1,0 +1,39 @@
+@startuml
+class PaymentNotification{
+    #NotificationChannel channel
+    +PaymentNotification(NotificationChannel)
+    +notifyCustomer()
+}
+
+class OnlinePaymentNotification{
+    +notifyCustomer()
+}
+
+class CashOnDeliveryNotification{
+    +notifyCustomer()
+}
+
+class BitcoinPaymentNotification{
+    +notifyCustomer()
+}
+
+class NotificationChannel <interface>{
+    +sendNotification(String)
+}
+
+class EmailChannel{
+    +sendNotification(String)
+}
+
+class SmsChannel{
+    +sendNotification(String)
+}
+
+NotificationChannel <.. SmsChannel
+NotificationChannel <.. EmailChannel
+
+PaymentNotification *-/uses-> NotificationChannel
+PaymentNotification <-- CashOnDeliveryNotification
+PaymentNotification <-- OnlinePaymentNotification
+PaymentNotification <-- BitcoinPaymentNotification
+@enduml
