@@ -8,8 +8,8 @@ public class OrderTest  {
     @Test
     public void testAddItem(){
         Order order = new Order();
-        order.addItem(new Burger());
-        assertEquals(5.0,order.getTotal());
+        order.addItem(new Cheese(new Burger()));
+        assertEquals(6.0,order.getTotal());
 
     }
 }

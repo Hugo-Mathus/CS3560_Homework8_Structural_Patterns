@@ -7,11 +7,15 @@ public class Order {
 
     public List<FoodItem> items =  new ArrayList<>();
     public void addItem(FoodItem item){
-
+        items.add(item);
     }
 
     public double getTotal(){
-        return 0.0;
+        double total = 0.0;
+        for (FoodItem item:items){
+            total = total + item.getCost();
+        }
+        return total;
     }
 
 }

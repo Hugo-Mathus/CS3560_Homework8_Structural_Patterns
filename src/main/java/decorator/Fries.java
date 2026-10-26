@@ -1,7 +1,5 @@
 package decorator;
 
-
-
 public class Fries implements FoodItem {
     @Override
     public double getCost() {
