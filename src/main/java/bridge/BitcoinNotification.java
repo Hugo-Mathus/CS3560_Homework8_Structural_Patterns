@@ -7,6 +7,6 @@ public class BitcoinNotification extends PaymentNotification {
 
     @Override
     public void NotifyCustomer() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        channel.sendNotification("Bitcoin payment was successful!");
     }
 }
