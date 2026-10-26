@@ -8,8 +8,7 @@ public class OnlinePaymentTest {
     @Test
     public void testNotifyCustomer() {
 
-        OnlinePaymentNotification payment =
-                new OnlinePaymentNotification(new EmailChannel());
+        OnlinePaymentNotification payment = new OnlinePaymentNotification(new EmailChannel());
 
         assertDoesNotThrow(() -> payment.NotifyCustomer());
     }
