@@ -6,6 +6,7 @@ public class BridgeDriver {
     public static void main(String[] args) {
         NotificationChannel email = new EmailChannel();
         NotificationChannel SMS = new SmsChannel();
+        NotificationChannel PUSH = new PushChannel();
 
         //Online + email
         OnlinePaymentNotification onlineEmail = new OnlinePaymentNotification(email);
@@ -25,5 +26,11 @@ public class BridgeDriver {
         //Bitcoin + SMS
         BitcoinNotification BitcoinSMS = new BitcoinNotification(SMS);
         BitcoinSMS.NotifyCustomer();
+        //Bitcoin + PUSH
+        BitcoinNotification BitcoinPUSH = new BitcoinNotification(PUSH);
+        BitcoinPUSH.NotifyCustomer();
+        //Online + PUSH
+        OnlinePaymentNotification OnlinePush = new OnlinePaymentNotification(PUSH);
+        OnlinePush.NotifyCustomer();
     }
 }
