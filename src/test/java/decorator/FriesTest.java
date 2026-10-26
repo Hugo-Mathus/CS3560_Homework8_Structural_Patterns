@@ -7,7 +7,7 @@ public class FriesTest {
     @Test
     public void testFries() {
         FoodItem fries = new Fries();
-        assertEquals(1.0, fries.getCost());
+        assertEquals(3.0, fries.getCost());
     }
 
 }
