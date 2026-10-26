@@ -1,0 +1,24 @@
+@startuml
+
+class ToppingDecorator <abstract>{
+    #FoodItem foodItem
+    + abstract getCost(): double
+    +ToppingDecorator(FoodItem)
+}
+class burger{
+    +getCost(): double
+}
+class FoodItem <interface>{
+    +getCost(): double
+}
+
+class cheese{
+    + cheese(FoodItem)
+    +getCost(): double
+}
+
+ToppingDecorator ..> FoodItem
+ToppingDecorator *--> FoodItem
+ToppingDecorator <|-- cheese
+FoodItem <|.. burger
+@enduml
