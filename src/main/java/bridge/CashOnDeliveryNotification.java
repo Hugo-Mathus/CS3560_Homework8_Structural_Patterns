@@ -7,6 +7,6 @@ public class CashOnDeliveryNotification extends PaymentNotification {
 
     @Override
     public void NotifyCustomer() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        channel.sendNotification("Order is confirmed! Payment will be collected upon delivery. ");
     }
 }
