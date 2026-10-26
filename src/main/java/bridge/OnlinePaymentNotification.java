@@ -7,6 +7,6 @@ public class OnlinePaymentNotification extends PaymentNotification {
 
     @Override
     public void NotifyCustomer() {
-        throw new UnsupportedOperationException("Not supported yet.");
+        channel.sendNotification("Payment was successful!");
     }
 }
